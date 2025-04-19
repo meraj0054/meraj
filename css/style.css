@@ -1,82 +1,75 @@
- @font-face {
-  font-family:BYekan ;
-  src: url(../font/BYekan-webfont.eot) format(eot) ,
-      url(../font/BYekan-webfont.ttf) format(ttf) ,
-      url(../font/BYekan-webfont.woff) format(woff);
 
-      font-weight: normal;
-      font-style: normal;
-        
-      
- }
- 
- 
- 
- *{
+
+* {
   direction: rtl;
-  font-family: "BYekan";
- }
- 
- 
- 
-@media(min-width:600px){ 
-    .top_navbar{
-        box-shadow: 0 0 50px black !important;
-
-    }
-
-
-    #top_actions_section{
-        display: flex !important;
-        align-items: center !important;
-    }
-}
-.User_list_itme.active .User_list_arrow_icon{
-    transform:rotate(180deg);
-}
- 
-
-
-.User_list_itme.active , .User_list_itme.active .collapsible-header{
-    background-color: rgba(148, 147, 147, 0.705);
+  text-align: right;
+  font-family: 'BYekan', sans-serif;
+  box-sizing: border-box; 
 }
 
- table.highlight > tbody > tr:hover {
-    background-color: #bbdefb ;
-  } 
- .container{
-    width: 100% !important; 
-  } 
-
-
-  .add_user_modal_back{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.267);
-    top:0;
-    left:0;
-    z-index: 999;
+@media (min-width: 600px) {
+  .top_navbar {
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) !important;
   }
 
-  .add_user_modal{
-    position: fixed;
-    height: 70vh;
-    background-color: white;
-    bottom:0;
-    z-index: 1000;
-    left: 0;
-    right: 0;
-    bottom: -70vh;
+  #top_actions_section {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between;
+  }
+}
 
-  }
-  .add_user_modal.show{
-    box-shadow: 0 0 10px blue;
-    bottom: 0;
+.User_list_itme.active .User_list_arrow_icon {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
 
-  }
-  
-  .sidenav_link_icon{
-    margin: 0 0 0 25px !important;
-  }
-  
+.User_list_itme.active,
+.User_list_itme.active .collapsible-header {
+  background-color: rgba(148, 147, 147, 0.705);
+  transition: background-color 0.3s ease-in-out;
+}
+
+table.highlight > tbody > tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+table.highlight > tbody > tr:hover {
+  background-color: #bbdefb;
+}
+
+.container {
+  width: 100% !important;
+}
+
+.add_user_modal_back {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.267);
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.add_user_modal {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70vh;
+  background: white;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.add_user_modal.show {
+  transform: translateY(0);
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.2);
+}
+
+.sidenav_link_icon {
+  margin: 0 0 0 25px !important;
+  display: flex;
+  align-items: center;
+}
